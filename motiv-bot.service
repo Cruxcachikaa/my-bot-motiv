@@ -1,0 +1,16 @@
+[Unit]
+Description=Motiv Bot Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=botuser
+WorkingDirectory=/home/botuser/motiv-bot
+Environment="PATH=/home/botuser/motiv-bot/venv/bin"
+ExecStart=/home/botuser/motiv-bot/venv/bin/python -m app.main
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
