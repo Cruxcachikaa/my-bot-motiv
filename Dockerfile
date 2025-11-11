@@ -14,7 +14,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копирование кода приложения
-COPY app/ ./app/
+COPY app ./app
 COPY pyproject.toml .
 
 # Создание директории для данных
@@ -26,4 +26,3 @@ ENV DATABASE_URL=sqlite+aiosqlite:///./data/motiv.db
 
 # Запуск бота
 CMD ["python", "-m", "app.main"]
-
